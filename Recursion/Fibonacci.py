@@ -14,7 +14,7 @@ def sumOfDigit(n):
 
 # print(sumOfDigit(2309))
 
-
+ 
 def powOfNum(n,ex):
     if ex==0:
         return 1
@@ -45,4 +45,13 @@ def  DecimalToBinary(num):
         return num  
     # remainder=num%2
     return num%2+10*DecimalToBinary(num//2)
-print(DecimalToBinary(5))
+# print(DecimalToBinary(5))
+
+
+
+myList=[1,2,3,4]
+def ReverseOrder(list,length):
+    if(length>0):
+        ReverseOrder(list,length-1)
+        print(myList[length-1])
+ReverseOrder(myList,len(myList))

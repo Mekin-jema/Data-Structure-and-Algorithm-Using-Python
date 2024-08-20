@@ -1,0 +1,8 @@
+![](images/image.png)
+![insertion images/image at the beginning of an array](images/image-1.png) 
+![time and space complexity of accessing array](images/image-2.png)
+![Time and  space complexity in array traversal](images/image-3.png)
+![Time and space complexity of Finding an elements](images/image-4.png)
+![Deletion elements in array ](images/image-5.png)
+![Revision for Both space and time complexity of te above methods](images/Summary.png)
+![Summary exercise ](images/image.png)
