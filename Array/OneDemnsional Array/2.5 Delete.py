@@ -1,7 +1,7 @@
 from array import *
 myArray=array('d',[1,2,3,4,5,6,7])
 
-myArray.remove(5) #insert the value not the inex
+myArray.remove(5) #insert value not the index
 print(myArray)
 
 # Iime and  space complexity

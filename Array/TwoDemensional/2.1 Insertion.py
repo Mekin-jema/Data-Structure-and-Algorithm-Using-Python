@@ -8,10 +8,10 @@ twoDArray=np.array([[11,15,10,16],[33,32,24,43],[34,35,63,23],[22,33,41,55]])
 # In Both time complexity is O(M*N)
 
 
-newTwoDArray=np.insert(twoDArray,0,[[1,2,3,4]],axis=0)
+newTwoDArray=np.insert(twoDArray,3,[[1,2,3,4]],axis=1)
 print(newTwoDArray) 
 
 
-#  Using append
-newTwoDArray=np.append(twoDArray,1,[[1,2,3,4]],axis=1)
-print(newTwoDArray)  
+# #  Using append
+# newTwoDArray=np.append(twoDArray,1,[[1,2,3,4]],axis=1)
+# print(newTwoDArray)  

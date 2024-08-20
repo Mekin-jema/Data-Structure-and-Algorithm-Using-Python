@@ -1,0 +1,125 @@
+# Singly linked list Deletion
+#     -Deleting the first Node
+#     -Deleting any given node 
+#     -Deleting the last node
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        
+class SLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    # def __iter__(self):
+    #     node = self.head
+    #     while node:
+    #         yield node
+    #         node = node.next
+
+    def insert(self, value, location):
+        newNode = Node(value)
+        if self.head ==None:  # If the list is empty
+            self.head = newNode
+            self.tail = newNode
+        else:
+            if location == 0:  # Insert at the beginning
+                newNode.next = self.head
+                self.head = newNode
+            elif location == 1:  # Insert at the end
+                self.tail.next = newNode
+                self.tail = newNode
+            else:  # Insert in the middle
+                index = 0
+                tempNode = self.head
+                while index < location - 1 : #and tempNode.next is not None :
+                    tempNode = tempNode.next
+                    index += 1
+                newNode.next = tempNode.next
+                tempNode.next = newNode
+                # if newNode.next is None:
+                #     self.tail = newNode
+
+    def print(self):
+         if self.head is None:
+            print("The list is empty")
+         else:
+            temp = self.head
+            items = []
+            while temp:
+                items.append(str(temp.value))
+                temp = temp.next
+            print("-->".join(items))
+            
+    def searchElement(self,value):
+        if self.head is None:
+            return("Linked List is empty")
+        tempNode=self.head
+        while tempNode is not None:
+            if tempNode.value==value:
+                return " element is found"
+            tempNode=tempNode.next
+        return "Element is not found"
+    
+    def deleteNode(self,location):
+        if self.head is None:
+            print("Linked List is empty")
+        
+        if location==0:
+            if self.head==self.tail:
+                self.head=None
+                self.tail=None
+            else:
+                self.head=self.head.next
+        elif location==1:
+              if self.head==self.tail:
+                self.head=None
+                self.tail=None
+              else:
+                  tempNode=self.head
+                  while tempNode is not None:
+                      if tempNode.next==self.tail:
+                          break
+                    #   else:
+                    #       tempNode=tempNode.next
+                          
+                      tempNode=tempNode.next
+                  tempNode.next=None
+                  self.tail=tempNode
+        else:
+            tempNode=self.head
+            index=0
+            while index <location-1 :
+                tempNode=tempNode.next
+                index+=1
+            nextNode=tempNode.next
+            tempNode.next=nextNode.next
+                
+    def deleteAllLinkedList(self):  # Time and space complexity is big of one (O(1))
+        if self.head is None:
+            print(" the list is empty")
+        else:
+            self.head=None
+            self.tail=None
+            
+                      
+             
+
+# Testing the linked list
+singleLinkedList = SLinkedList()
+singleLinkedList.insert(1, 0)
+singleLinkedList.insert(2, 1)
+singleLinkedList.insert(3, 2)
+singleLinkedList.insert(4, 3)
+singleLinkedList.insert(5, 4)
+singleLinkedList.print()
+# print(singleLinkedList.searchElement(4))
+singleLinkedList.deleteNode(1)
+singleLinkedList.print()
+
+
+# Alternatively, you can iterate using:
+# for node in singleLinkedList:// it is connected to the iter constructor 
+#      print(node.value)

@@ -6,7 +6,7 @@ myArray1=array('i',[1,2,3,4,5,6,7])
 myArray2=array('d',[1,2,3,4,5,6,7])
 
 
-myArray2.insert(7,8)
+myArray2.insert(0,8)
 print(myArray2)
 
 
